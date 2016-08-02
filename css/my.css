@@ -1,6 +1,7 @@
 table{
-    border-collapse: collapse;
-}
+     border-collapse: collapse;
+    width:60%;
+ }
 th{
     background: #95c1dd;
 }
