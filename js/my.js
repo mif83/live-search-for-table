@@ -52,11 +52,23 @@ function sortTable(table, x, elem){
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
 }
+function search(searchElem, table){
+    var reg = new RegExp(searchElem.value, "gim"),
+        trList = [].slice.apply(table.querySelectorAll("tr"), [1]);
 
+    for (var i = 0; i < trList.length; i++){
+        if(trList[i].textContent.search(reg) == -1){
+           trList[i].hidden = true;
+        } else {
+            trList[i].hidden = false;
+        }
+    }
+}
 
 window.onload = function (){
     var table = document.getElementById("table-phone"),
-        thList = table.querySelectorAll("th");
+        thList = table.querySelectorAll("th"),
+        searchElem = document.getElementById("search");
 
          for (var i = 0; i < thList.length; i++){
             thList[i].addEventListener("click", (function(i){
@@ -67,5 +79,7 @@ window.onload = function (){
                 }
             }(i)));
         }
-
-}
+        searchElem.addEventListener("keyup", function(){
+            search(searchElem, table);
+        });
+};
