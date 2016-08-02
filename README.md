@@ -15,12 +15,17 @@ Insert search query into text field,search will be performed after each inserted
 ### Using
 
 In section window.onload, put id your table
+```js
  table = document.getElementById("your-table-id")
+```
 
  and put in id your serch element
+ ```js
 searchElem = document.getElementById("your-search-id");
+  ```
 
 If You use this script with many tables, you will create another variables (table1, table2... and searchElem1, searchElem2)and put another bit of code
+ ```js
  thList = **table**.querySelectorAll("th");
  for (var i = 0; i < thList.length; i++){
             thList[i].addEventListener("click", (function(i){
@@ -34,3 +39,4 @@ If You use this script with many tables, you will create another variables (tabl
         searchElem.addEventListener("keyup", function(){
             search(**searchElem**, **table**);
         });
+  ```
