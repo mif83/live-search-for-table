@@ -64,22 +64,30 @@ function search(searchElem, table){
         }
     }
 }
+function addEvent(arrTableId, arrSearchElem){
 
-window.onload = function (){
-    var table = document.getElementById("table-phone"),
-        thList = table.querySelectorAll("th"),
-        searchElem = document.getElementById("search");
-
-         for (var i = 0; i < thList.length; i++){
-            thList[i].addEventListener("click", (function(i){
-                 var elem = thList[i];
-                 elem.direction = true;
+    for(var i = 0; i < arrTableId.length; i++){
+        var curentTable = document.getElementById(arrTableId[i]),
+            thList = curentTable.querySelectorAll("th"),
+            searchElem = document.getElementById(arrSearchElem[i]);
+        for (var j = 0; j < thList.length; j++){
+            thList[j].addEventListener("click", (function(j, curentTable){
+                var elem = thList[j];
+                elem.direction = true;
                 return function(){
-                    sortTable(table, i, elem );
+                    sortTable(curentTable, j, elem );
                 }
-            }(i)));
+            }(j, curentTable)));
         }
-        searchElem.addEventListener("keyup", function(){
-            search(searchElem, table);
-        });
+
+        searchElem.addEventListener("keyup", (function(searchElem, curentTable){
+            return function(){
+                search(searchElem, curentTable);
+            }
+        })(searchElem, curentTable));
+    }
+
+}
+window.onload = function (){
+    addEvent(["table-phone", "table-verbs"], ["search", "search2"]);
 };

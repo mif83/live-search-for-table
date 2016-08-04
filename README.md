@@ -9,34 +9,26 @@ To make table sorted click the table header
 
 ### Search
 
-Insert search query into text field,search will be performed after each inserted symbol
+Insert search query into text field, search will be performed after each inserted symbol
 
+### Clone
+
+Clone a copy of the Table script:
+
+```bash
+git clone https://github.com/mif83/table.git
+```
 
 ### Using
 
-In section window.onload, put id your table
+In section window.onload, function addEvent sends two arrays with id tables and search elements
 ```js
- table = document.getElementById("your-table-id")
+ addEvent(["table-phone", "table-verbs"], ["search", "search2"]);
 ```
 
- and put in id your serch element
+Type in your id
  ```js
-searchElem = document.getElementById("your-search-id");
+addEvent(["your-table"], ["your-search"]);
   ```
 
-If You use this script with many tables, you will create another variables (table1, table2... and searchElem1, searchElem2)and put another bit of code
- ```js
- thList = **table**.querySelectorAll("th");
- for (var i = 0; i < thList.length; i++){
-            thList[i].addEventListener("click", (function(i){
-                 var elem = thList[i];
-                 elem.direction = true;
-                return function(){
-                    sortTable(**table**, i, elem );
-                }
-            }(i)));
-        }
-        searchElem.addEventListener("keyup", function(){
-            search(**searchElem**, **table**);
-        });
-  ```
+
