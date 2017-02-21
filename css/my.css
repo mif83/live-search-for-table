@@ -1,7 +1,7 @@
 body{
     display: flex;
     justify-content: center;
-
+    background-color: rgba(238, 241, 243, 0.8);
 }
 .wrap{
     flex-basis: 1000px;
