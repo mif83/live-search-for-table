@@ -2,6 +2,7 @@ Table
 ==================================================
 
 This script can sort table and perform live data search
+https://mif83.github.io/table/
 --------------------------------------
 ### Sorting
 

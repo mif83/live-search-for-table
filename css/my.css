@@ -10,9 +10,9 @@ th,td{
     padding:5px 30px 5px 10px;
 }
 .up{
-    background: #95c1dd url("../img/up.png") right center no-repeat;
+    background: #95c1dd url("../img/up.png") 98% center no-repeat;
 }
 
 .down{
-    background: #95c1dd url("../img/down.png")  right center no-repeat;
+    background: #95c1dd url("../img/down.png")  98% center no-repeat;
 }
